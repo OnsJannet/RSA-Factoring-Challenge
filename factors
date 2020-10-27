@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Prints a natural numbers to factor.
+
+FILE=$1
+while read Fnumber
+do
+    factors=($(factor $Fnumber))
+    echo "$Fnumber=$(($Fnumber/${factors[1]}))*${factors[1]}"
+done < $FILE
